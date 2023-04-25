@@ -1,27 +1,36 @@
-* {
-    font-family: 'Josefin Sans', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Chivo+Mono&family=Michroma&family=Rajdhani:wght@500&display=swap');
+
+:root {
+  --white: rgb(245, 243, 244);
 }
 
-.container {
+body {
     justify-content: center;
     align-items: center;
     text-align: center;
     background: black;    
-    margin:0;
-    height: 45vw;    
+    margin:0;    
 }
 
 /**/
 
 .titulo {
-    color: antiquewhite;
-    margin-left: 42%;
-    font-size: 3vw;
-    border-right: 1px solid;
-    margin-top: 30px;
-    width: 9ch;
-    animation: typing 4s steps(9), blink .5s infinite step-end alternate;
-    overflow: hidden;
+    font-family: 'Michroma', sans-serif;
+    color: var(--white);
+    font-size: 34px;
+    animation: move 1s ease-out;
+    transition-duration: 1s;
+}
+
+@keyframes move {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+ 100% {
+    opacity: 1;
+    transform: translateY(0);}
 }
 
 @keyframes typing {
@@ -35,6 +44,8 @@
 .card-grid {
 width: fit-content;
 display: inline-block;
+animation: move 1s ease-out;
+transition-duration: 1s;
 }
 
 .card-blur {
@@ -66,8 +77,10 @@ display: inline-block;
 
 
 .nombre {
-color: white;
+color: var(--white);
 font-size: 1.5vw;
+font-family: 'Michroma', sans-serif;
+
 }
 
 
@@ -79,7 +92,7 @@ footer {
   left: 0;
   bottom: 0;  
   margin-top: 0;
-  position: fixed;
+  
   
 }
 
@@ -89,7 +102,7 @@ footer {
   justify-content: center;
   color: white;
   height: 3vw; 
-  position: fixed;  
+  
   
 }
 
@@ -103,11 +116,6 @@ footer {
   border: 4px blueviolet dotted;
 }
 
-.nav {
-padding: 20px;
-color: white;
-text-decoration: none;
-}
 
 .foot2 {
   display: inline-flex;
