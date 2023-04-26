@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Chivo+Mono&family=Michroma&family=Rajdhani:wght@500&display=swap');
+
+:root{
+    --white: rgb(245, 243, 244);
+
+}
+
+
+
+body {
+    background: black;
+    margin: 0;
+}
+
+header {
+    height: 100vh;
+    width: 100vw;
+}
+
+/******* NAV *******/
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px;
+    margin: 0px;
+    height: 30vh;
+    display: flex;
+    animation: move 1s ease-out;
+    transition-duration: 1s;
+
+}
+
+.brillo {
+    position: relative;
+    display: flex;
+    justify-content: start;
+    margin-left: 40px;
+    margin-top: 30px;
+    height: 30px;
+}
+
+a { 
+    font-family: 'Chivo Mono', monospace;
+    color: var(--white);
+    text-decoration: none;
+}
+
+ul {
+    display: flex;
+    margin: 10px;
+    padding: 30px 40px 0 40px;
+    
+}
+
+.nav-link{
+    font-size: 1rem;
+    padding: 1rem;
+    margin: 0 20px 0 20px;
+    
+}
+
+.nav-link:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    border: 5px solid #3366FF;
+    transition: 0.4s;
+}
+
+.nav-link:hover:after {
+    width: 100%;
+}
+
+
+/******* TITULO HEADER *******/
+
+.tituloHeader{
+    position: relative;
+    display: flex;
+    font-family: 'Michroma', sans-serif;
+    font-size: 2rem;
+    color: var(--white);
+    margin-left: 50px;
+    margin-top: 20px;
+    animation: move 1.5s ease-out;
+    transition-duration: 1s;
+
+}
+
+
+@keyframes move {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+
+   100% {
+      opacity: 1;
+      transform: translateY(0);}
+  }
+
+  /******* MAIN *******/
+
+  .main{
+    height: 100vh;
+  }
+
+  /******* SKILLS *******/
+  .sectionSkills {
+    height: 100vh;
+
+  }
+
+
+  /******* CONTACTO *******/
+  .sectionContacto{
+    height: 100vh;
+  }
