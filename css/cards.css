@@ -1,15 +1,5 @@
-* {
-    font-family: 'Josefin Sans', sans-serif;
-}
+@import url('https://fonts.googleapis.com/css2?family=Chivo+Mono&family=Michroma&family=Rajdhani:wght@500&display=swap');
 
-.container {
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background: black;    
-    margin:0;
-    height: 45vw;    
-}
 
 /**/
 
@@ -17,7 +7,6 @@
     color: antiquewhite;
     margin-left: 42%;
     font-size: 3vw;
-    border-right: 1px solid;
     margin-top: 30px;
     width: 9ch;
     animation: typing 4s steps(9), blink .5s infinite step-end alternate;
@@ -33,8 +22,9 @@
 }
 
 .card-grid {
-width: fit-content;
-display: inline-block;
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
 }
 
 .card-blur {
@@ -66,6 +56,9 @@ display: inline-block;
 
 
 .nombre {
+  display: flex;
+  justify-content: center;
+font-family: 'Chivo Mono', monospace;
 color: white;
 font-size: 1.5vw;
 }
@@ -79,7 +72,6 @@ footer {
   left: 0;
   bottom: 0;  
   margin-top: 0;
-  position: fixed;
   
 }
 
@@ -89,18 +81,15 @@ footer {
   justify-content: center;
   color: white;
   height: 3vw; 
-  position: fixed;  
   
 }
 
 .foot1 {
   display: inline-flex;
   justify-content: flex-start;
-  position: fixed;
   width: fit-content;
   font-size: 1.3vw;
   
-  border: 4px blueviolet dotted;
 }
 
 .nav {
@@ -113,11 +102,8 @@ text-decoration: none;
   display: inline-flex;
   justify-content: flex-end;
   right: 0;
-  position: fixed;
   width: fit-content;
   font-size: 1.3vw;
-
-  border: 4px blueviolet dotted;
 }
 
 .fa {
