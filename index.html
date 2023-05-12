@@ -10,42 +10,51 @@
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/cards.css">
   <link rel="stylesheet" href="./css/styles.css">
+  <script src="https://kit.fontawesome.com/60d60d96a7.js" crossorigin="anonymous"></script>
   <title>Portfolio</title>
 </head>
 
-<body class="container">
-  <header>
+<body class="dark">
+  <header id="#home">
     <!-- HOME -->
 
 
-    <nav>
-      <a href="">
-        <img src="./css/img/brillo.png" alt="" class="brillo">
-      </a>
-      <ul>
-        <li type="none">
-          <a href="" class="nav-link">HOME</a>
-        </li>
-        <li type="none">
-          <a href="" class="nav-link">NOSOTROS</a>
-        </li>
-        <li type="none">
-          <a href="" class="nav-link">SKILLS</a>
-        </li>
-        <li type="none">
-          <a href="" class="nav-link">CONTACTO</a>
-        </li>
-      </ul>
+    <nav >
+
+      <button class="modo" id="modo"><img src="./css/img/brillo.png" alt="" class="brillo"></button>
+
+        <!-- MENU -->
+      <button id="botonHamburguesa">
+        <span>&#9776;</span>
+      </button>
+      <div class="menu" id="menuHamburguesa">
+        <ul>
+          <li type="none">
+            <a href="#home" class="link">HOME</a>
+          </li>
+          <li type="none">
+            <a href="#nosotros" class="link">NOSOTROS</a>
+          </li>
+          <li type="none">
+            <a href="#skills" class="link">SKILLS</a>
+          </li>
+          <li type="none">
+            <a href="#contacto" class="link">CONTACTO</a>
+          </li>
+        </ul>
+      </div>
     </nav>
 
     <div class="tituloHeader">
       <h1>PORTFOLIO</h1>
     </div>
+
+
   </header>
 
 
   <!-- NOSOTROS -->
-  <main>
+  <main class="mainNosotros"id="nosotros">
     <div>
       <p class="titulo"><span>NOSOTROS</p></span>
     </div>
@@ -82,19 +91,55 @@
   <br>
 
   <!-- SKILLS -->
-  <section class="sectionSkills">
+  <section class="sectionSkills" id="skills">
     <div>
       <p class="titulo"><span>SKILLS</p></span>
     </div>
   </section>
   <br>
-
-  <section class="sectionContacto">
+  <!-- CONTACTO -->
+  <section class="sectionContacto" id="contacto">
+    
+    <div class="diseñoContacto">
     <div>
-      <p class="titulo"><span>CONTACTO</p></span>
+      <p class="tituloContacto"><span>CONTACTO</p></span>
     </div>
+    <form action="show_data.html" method="post">
+      <div class="formulario">
+        <label for="nombre">
+          <input type="text" name="nombre" id="nombre" placeholder="Nombre" />
+        </label>
+      </div>
+      <div class="formulario">
+        <label for="apellido">
+          <input type="text" name="apellido" id="apellido" placeholder="Apellido" />
+        </label>
+      </div>
+
+      <div class="formulario">
+        <label for="telefono">
+          <input type="number" name="telefono" id="telefono" placeholder="Teléfono" />
+        </label>
+      </div>
+      <div class="formulario">
+        <label for="mail">
+          <input type="email" name="mail" id="mail" placeholder="Mail">
+        </label>
+      </div>
+      <div class="formulario"> 
+        <label for="mensaje"></label>
+        <textarea name="mensaje" id="mensaje" placeholder="Mensaje" cols="40" rows="8" required ></textarea>
+
+      </div>
+      <br>
+      <div class="formulario">
+        <input type="submit" value="ENVIAR" id="formButton">
+      </div> 
+    </form>
+  </div>
   </section>
   <br>
+
   <footer class="foot-ppal">
     <p>2023 - Todos los derechos reservados</p>
   </footer>
@@ -102,5 +147,6 @@
 
 
 </body>
+<script src="./js/script.js"></script>
 
 </html>

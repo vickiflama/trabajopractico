@@ -14,13 +14,6 @@ body {
 
 /**/
 
-.titulo {
-    font-family: 'Michroma', sans-serif;
-    color: var(--white);
-    font-size: 34px;
-    animation: move 1s ease-out;
-    transition-duration: 1s;
-}
 
 @keyframes move {
   0% {
@@ -55,6 +48,7 @@ transition-duration: 1s;
     display: inline-block;
     border-radius: 20px;
     margin: 0 15px;
+    
 }
 
 .card-blur:hover {
@@ -131,3 +125,4 @@ footer {
 .fa {
   color: white
 }
+

@@ -2,14 +2,13 @@
 
 :root{
     --white: rgb(245, 243, 244);
-
 }
-
 
 
 body {
     background: black;
     margin: 0;
+    /* overflow-y: hidden; */
 }
 
 header {
@@ -30,53 +29,167 @@ nav {
 
 }
 
-.brillo {
-    position: relative;
-    display: flex;
-    justify-content: start;
-    margin-left: 40px;
-    margin-top: 30px;
-    height: 30px;
+
+/* MENU */
+#botonHamburguesa {
+    background-color: black;
+    color: #fff;
+    font-size: 24px;
+    font-family: sans-serif;
+    height: 100px;
+    padding: 20px;
+    border: none;
+    cursor: pointer;
 }
 
-a { 
+/* #menuHamburguesa {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} */
+.menu ul li a{
     font-family: 'Chivo Mono', monospace;
     color: var(--white);
     text-decoration: none;
+    position: relative;
 }
 
 ul {
     display: flex;
     margin: 10px;
     padding: 30px 40px 0 40px;
-    
 }
 
-.nav-link{
+.link{
     font-size: 1rem;
     padding: 1rem;
     margin: 0 20px 0 20px;
-    
 }
 
-.nav-link:after {
+.menu ul li a::before{
     content: '';
+    border-bottom: 2px solid rgb(227, 230, 90);
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 0%;
-    border: 5px solid #3366FF;
-    transition: 0.4s;
-}
-
-.nav-link:hover:after {
     width: 100%;
+    opacity: 0;
+    transform: scaleX(0);
+    transform-origin: top left;
+    transition: transform 0.3s ease-in;
 }
 
+.menu ul li a:hover::before{
+    transform: scaleX(1);
+    width: 100%;
+    opacity: 1;
+}
 
+/* BOTON DARK/LIGHT */
+.dark .menu ul li a::before{
+    border-bottom: 2px solid rgb(155, 19, 19);
+}
+.dark #botonHamburguesa {
+    background-color: var(--white);
+    color: black;
+}
+.modo {
+    display: flex;
+    position: relative;
+    padding: 0;
+    margin-left: 40px;
+    margin-top: 30px;
+    border: 0px;
+    background-color: black;
+    cursor: pointer;
+}
+.brillo {
+    position: relative;
+    height: 30px;
+    
+}
+.dark{
+    background-color: var(--white);
+    
+}
+
+.dark h1 {
+    color: black;
+}
+
+.dark .link {
+    color: black;
+}
+
+.dark .titulo{
+    color: black;
+}
+
+.dark .modo {
+    background-color: var(--white);
+}
+
+.dark .nombre{
+    color: black;
+}
+
+.dark .foot-ppal{
+    color: black;
+}
+
+.dark .card-blur{
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.735);
+}
+
+.dark .diseñoContacto{
+    border: 1px solid black;
+    background-color: var(--white);
+}
+
+.dark .tituloContacto{
+    color: black;
+}
+
+.dark ::placeholder {
+    color: black;
+}
+
+.dark label{
+    color: black;
+}
+
+.dark input[type= 'text'] {
+    color: black;
+    border-bottom: 1px solid black;
+}
+
+.dark input[type ='number']{ 
+    color: black;
+    border-bottom: 1px solid black;
+}
+
+.dark input[type='email']{
+    color: black;
+    border-bottom: 1px solid black;
+}
+
+.dark textarea {
+    color: black;
+    border-color: black;
+}
+
+.dark #formButton{
+    color: black;
+    border-color: black;
+}
+
+.dark #formButton:hover{
+    background: black;
+    color: var(--white);
+}
 /******* TITULO HEADER *******/
 
-.tituloHeader{
+.tituloHeader {
     position: relative;
     display: flex;
     font-family: 'Michroma', sans-serif;
@@ -90,31 +203,223 @@ ul {
 }
 
 
+
 @keyframes move {
     0% {
-      opacity: 0;
-      transform: translateY(50px);
+        opacity: 0;
+        transform: translateY(50px);
     }
 
-   100% {
-      opacity: 1;
-      transform: translateY(0);}
-  }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
-  /******* MAIN *******/
+/******* NOSOTROS *******/
 
-  .main{
+.mainNosotros {
+    padding: 2rem;
     height: 100vh;
-  }
+    animation: move 1s ease-out;
+    transition-duration: 1s;
+}
 
-  /******* SKILLS *******/
-  .sectionSkills {
+.titulo {
+    font-family: 'Michroma', sans-serif;
+    color: var(--white);
+    font-size: 34px;
+    animation: move 1s ease-out;
+    transition-duration: 1s;
+}
+
+/******* SKILLS *******/
+.sectionSkills {
+    padding: 2rem;
+    position: relative;
     height: 100vh;
+    animation: move 1s ease-out;
+    transition-duration: 1s;
 
-  }
+}
 
 
-  /******* CONTACTO *******/
-  .sectionContacto{
+/******* CONTACTO *******/
+.sectionContacto {
+    padding: 2rem;
     height: 100vh;
+    display: flex;
+    justify-content: center;
+    animation: movimiento 1s ease-out;
+}
+
+.tituloContacto {
+    margin-top: 100px;
+    font-family: 'Michroma', sans-serif;
+    color: var(--white);
+    font-size: 32px;
+    animation: move 1s ease-out;
+    transition-duration: 1s;
+}
+label {
+    color: var(--white);
+    font-family: 'Chivo Mono', monospace;
+    display: contents;
+}
+
+input[type = 'text'], [type = 'number'], [type = 'email']{
+    width: auto;
+    border: none;
+    border-bottom: 1px solid var(--white);
+    background: none;
+    color: #dce0e3;
+    font-family: 'Chivo Mono', monospace;
+    width: 100%;
+    animation: move 1s ease-out;
+    transition-duration: 1s;
+}
+
+::placeholder{
+    color: #dce0e3;
+    font-family: 'Chivo Mono', monospace;
+}
+textarea{
+    border: none;
+    border-bottom: 1px solid var(--white);
+    background: none;
+    color: #dce0e3;
+    line-height: 150%;
+    height: 100px;
+	resize: none;
+    width: 100%;
+    animation: move 1s ease-out;
+    transition-duration: 1s;
+
+}
+form{
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.formMensaje{
+    color: var(--white);
+    font-family: 'Chivo Mono', monospace;
+}
+.formulario {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    padding-right: 0px;
+    width: 50vh;
+    height: 4vh;
+
+}
+
+#formButton{
+    background: none;
+    color: #dce0e3;
+    cursor: pointer;
+    display: flex;
+    align-self: center;
+    border: 1px solid whitesmoke;
+    font-family: 'Chivo Mono', monospace;
+    padding: 20px 40px; 
+    margin-top: 150px;
+    transition: all 0.3s;
+    animation: move 1s ease-out;
+    transition-duration: 1s;
+}
+
+#formButton:hover {
+    background: #F2F3EB;
+    color: #474544;
   }
+
+.diseñoContacto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40vw;
+    background-color: black;
+    border: 1px solid whitesmoke;
+
+}
+
+@keyframes movimiento {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+}
+
+100% {
+    transform: translateY(0);
+    opacity: 1;  
+}
+}
+
+/****** MEDIA QUERIES *******/
+
+@media screen and (max-width: 640px) {
+    .tituloHeader , .titulo , .tituloContacto{
+        font-size: 1rem;
+    }
+
+    .formulario, .formMensaje {
+        width: 90%;
+    }
+
+    .diseñoContacto {
+        width: 70%;
+    }
+
+    #formButton{
+        padding: 10px 20px;
+    }
+    #menuHamburguesa{
+        display: none;
+    }
+}
+
+@media screen and (min-width: 641px) and (max-width: 960px){
+    .tituloHeader , .titulo , .tituloContacto{
+        font-size: 30px;
+    }
+
+    .formulario, .formMensaje {
+        width: 90%;
+    }
+
+    .diseñoContacto {
+        width: 70%;
+    }
+
+    #formButton {
+        padding: 15px 25px;
+    }
+    #menuHamburguesa{
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .tituloHeader , .titulo , .tituloContacto{
+        font-size: 2rem;
+    }
+
+    .formulario, .formMensaje {
+        width: 150%;
+    }
+
+    .diseñoContacto {
+        width: 70%;
+    }
+
+    #formButton {
+        padding: 20px 40px; 
+    }
+
+    #botonHamburguesa{
+        display: none;
+    }
+}
