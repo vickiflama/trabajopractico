@@ -145,7 +145,16 @@ header {
 .dark .cuatro,
 .dark .ol-modal,
 .dark .p-analia,
-.dark .p-victoria {
+.dark .p-victoria,
+.dark h1,
+.dark .link ,
+.dark .titulo,
+.dark .modo,
+.dark .nombre,
+.dark .foot-ppal,
+.dark .tituloContacto,
+.dark ::placeholder,
+.dark label {
     color: black;
 }
 
@@ -157,7 +166,7 @@ header {
 }
 
 
-.dark h1,
+/* .dark h1,
 .dark .link ,
 .dark .titulo,
 .dark .modo,
@@ -167,7 +176,7 @@ header {
 .dark ::placeholder,
 .dark label{
     color: black;
-}
+} */
 
 .dark .card-blur {
     box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.735);
