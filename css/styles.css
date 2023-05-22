@@ -1,71 +1,78 @@
 @import url('https://fonts.googleapis.com/css2?family=Chivo+Mono&family=Michroma&family=Rajdhani:wght@500&display=swap');
 
-:root{
+:root {
     --white: rgb(245, 243, 244);
 }
 
+html {
+    scroll-behavior: smooth;
+    
+}
 
 body {
-    
+    margin: 0;
+    padding: 0;
     background: black;
 }
 
 header {
+    display: flex;
+    line-height: 60vh;
     height: 100vh;
-    width: 100vw;
 }
 
 /******* NAV *******/
-nav {
+.nav {
+    background-color: black;
     display: flex;
     justify-content: space-between;
     padding: 0px;
-    margin: 0px;
-    height: 30vh;
-    display: flex;
+    margin: 0;
+    height: 14vh;
+    width: 100%;
     animation: move 1s ease-out;
-    transition-duration: 1s;
 
 }
 
 
 /* MENU */
-#botonHamburguesa {
-    background-color: black;
-    color: #fff;
-    font-size: 24px;
-    font-family: sans-serif;
-    height: 100px;
-    padding: 20px;
-    border: none;
-    cursor: pointer;
+.nav-menu {
+    display: flex;
+    margin-right: 40px;
+    position: relative;
+
 }
 
-/* #menuHamburguesa {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-} */
-.menu ul li a{
+.nav-menu-item {
+    font-size: 16px;
+    margin: 0 10px;
+    line-height: 80px;
+    width: max-content;
+}
+
+.nav-toggle {
+    color: white;
+    background: none;
+    border: none;
+    font-size: 30px;
+    padding: 0 20px;
+    line-height: 60px;
+    display: none;
+}
+
+
+
+.link {
+    font-size: 1rem;
+    padding: 1rem;
+    margin: 0 20px 0 20px;
     font-family: 'Chivo Mono', monospace;
     color: var(--white);
     text-decoration: none;
     position: relative;
 }
 
-ul {
-    display: flex;
-    margin: 10px;
-    padding: 30px 40px 0 40px;
-}
-
-.link{
-    font-size: 1rem;
-    padding: 1rem;
-    margin: 0 20px 0 20px;
-}
-
-.menu ul li a::before{
+.link::before {
     content: '';
     border-bottom: 2px solid rgb(227, 230, 90);
     position: absolute;
@@ -78,20 +85,38 @@ ul {
     transition: transform 0.3s ease-in;
 }
 
-.menu ul li a:hover::before{
+.link:hover::before {
     transform: scaleX(1);
     width: 100%;
     opacity: 1;
 }
 
 /* BOTON DARK/LIGHT */
-.dark .menu ul li a::before{
-    border-bottom: 2px solid rgb(155, 19, 19);
+.dark {
+    background-color: var(--white);
+
 }
+
+.dark .link::before {
+    border-bottom: 2px solid rgb(171, 25, 25);
+}
+
 .dark #botonHamburguesa {
     background-color: var(--white);
     color: black;
 }
+
+.dark .nav,
+.dark .nav-menu{
+    background-color: var(--white);
+}
+
+.dark .nav-toggle {
+    color: black;
+}
+
+
+
 .modo {
     display: flex;
     position: relative;
@@ -101,73 +126,70 @@ ul {
     border: 0px;
     background-color: black;
     cursor: pointer;
+    animation: 0s;
 }
+
 .brillo {
     position: relative;
     height: 30px;
-    
-}
-.dark{
-    background-color: var(--white);
-    
+
 }
 
-.dark h1 {
-    color: black;
-}
-
-.dark .link {
-    color: black;
-}
-
-.dark .titulo{
-    color: black;
-}
-
-.dark .modo {
+.dark .brillo,
+.dark .modo{
     background-color: var(--white);
 }
-
-.dark .nombre{
+.dark .uno,
+.dark .dos,
+.dark .tres,
+.dark .cuatro,
+.dark .ol-modal,
+.dark .p-analia,
+.dark .p-victoria {
     color: black;
 }
 
-.dark .foot-ppal{
-    color: black;
+.dark .skillsAnalia,
+.dark .skillsJonathan,
+.dark .skillsMariaInes,
+.dark .skillsVictoria {
+    border-bottom: 1px solid black;
 }
 
-.dark .card-blur{
-    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.735);
-}
 
-.dark .diseñoContacto{
-    border: 1px solid black;
-    background-color: var(--white);
-}
-
-.dark .tituloContacto{
-    color: black;
-}
-
-.dark ::placeholder {
-    color: black;
-}
-
+.dark h1,
+.dark .link ,
+.dark .titulo,
+.dark .modo,
+.dark .nombre,
+.dark .foot-ppal,
+.dark .tituloContacto,
+.dark ::placeholder,
 .dark label{
     color: black;
 }
 
-.dark input[type= 'text'] {
+.dark .card-blur {
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.735);
+}
+
+.dark .diseñoContacto {
+    border: 1px solid black;
+    background-color: var(--white);
+}
+
+
+.dark input[type='text'] {
     color: black;
     border-bottom: 1px solid black;
 }
 
-.dark input[type ='number']{ 
+.dark input[type='number'] {
     color: black;
     border-bottom: 1px solid black;
 }
 
-.dark input[type='email']{
+.dark input[type='email'] {
     color: black;
     border-bottom: 1px solid black;
 }
@@ -177,19 +199,19 @@ ul {
     border-color: black;
 }
 
-.dark #formButton{
+.dark #formButton {
     color: black;
     border-color: black;
 }
 
-.dark #formButton:hover{
+.dark #formButton:hover {
     background: black;
     color: var(--white);
 }
+
 /******* TITULO HEADER *******/
 
 .tituloHeader {
-    position: relative;
     display: flex;
     font-family: 'Michroma', sans-serif;
     font-size: 2rem;
@@ -218,13 +240,16 @@ ul {
 /******* NOSOTROS *******/
 
 .mainNosotros {
-    padding: 2rem;
-    height: 100vh;
+    padding-top: 5rem;
+    height: 90vh;
     animation: move 1s ease-out;
     transition-duration: 1s;
+
 }
 
 .titulo {
+    display: flex;
+    justify-content: center;
     font-family: 'Michroma', sans-serif;
     color: var(--white);
     font-size: 34px;
@@ -234,19 +259,177 @@ ul {
 
 /******* SKILLS *******/
 .sectionSkills {
+
     padding: 2rem;
-    position: relative;
-    height: 100vh;
+    padding-top: 5rem;
+    height: auto;
     animation: move 1s ease-out;
     transition-duration: 1s;
 
 }
 
+.animado1,
+.animado2,
+.animado3,
+.animado4 {
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+.mostrarArriba {
+    animation: mostrarArriba 1s;
+}
+
+@keyframes mostrarArriba {
+    0% {
+        transform: translateY(60px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Skills ANALIA */
+.skillsAnalia {
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid white;
+    padding: 5px;
+    width: 30vw;
+}
+
+.uno {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    width: 50vw;
+    color: var(--white);
+    font-family: 'Chivo Mono', monospace;
+
+}
+
+.p-analia {
+    color: var(--white);
+    line-height: 20px;
+    padding: 20px;
+    width: 50vw;
+    font-family: 'Chivo Mono', monospace;
+}
+
+.ol-analia {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+/* Skills VICTORIA */
+
+.skillsVictoria {
+    display: flex;
+    justify-content: center;
+    width: 30vw;
+    border-bottom: 1px solid white;
+    padding: 20px;
+}
+
+.dos {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    color: var(--white);
+    font-family: 'Chivo Mono', monospace;
+
+}
+
+.p-victoria {
+    line-height: 20px;
+    padding: 20px;
+    width: 50vw;
+    font-family: 'Chivo Mono', monospace;
+    color: var(--white);
+}
+
+.ol-victoria {
+    display: flex;
+    justify-content: end;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+
+.li-victoria {
+    margin: 10px;
+}
+
+/* Skills MARIA INES */
+.skillsMariaInes {
+    display: flex;
+    border-bottom: 1px solid white;
+    padding: 20px;
+    width: 40vw;
+}
+
+.tres {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    width: 70vw;
+    font-family: 'Chivo Mono', monospace;
+    color: var(--white);
+}
+
+.ol-mariaInes {
+    padding: 0;
+    display: flex;
+    justify-content: start;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.p-marinaInes {
+    line-height: 20px;
+    padding: 20px;
+    width: 50vw;
+}
+
+
+
+.li-mariaInes {
+    margin: 10px;
+    width: 100%;
+}
+
+/* Skills Jonathan */
+.skillsJonathan {
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid white;
+    margin-top: 10px;
+    padding: 5px;
+    width: 23vw;
+}
+
+.cuatro {
+    display: flex;
+    justify-content: end;
+    font-family: 'Chivo Mono', monospace;
+    color: var(--white);
+}
+
+.ol-jonathan {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+
 
 /******* CONTACTO *******/
 .sectionContacto {
-    padding: 2rem;
-    height: 100vh;
+
+    padding-top: 6rem;
+    height: 90vh;
     display: flex;
     justify-content: center;
     animation: movimiento 1s ease-out;
@@ -260,13 +443,16 @@ ul {
     animation: move 1s ease-out;
     transition-duration: 1s;
 }
+
 label {
     color: var(--white);
     font-family: 'Chivo Mono', monospace;
     display: contents;
 }
 
-input[type = 'text'], [type = 'number'], [type = 'email']{
+input[type='text'],
+[type='number'],
+[type='email'] {
     width: auto;
     border: none;
     border-bottom: 1px solid var(--white);
@@ -278,33 +464,37 @@ input[type = 'text'], [type = 'number'], [type = 'email']{
     transition-duration: 1s;
 }
 
-::placeholder{
+::placeholder {
     color: #dce0e3;
     font-family: 'Chivo Mono', monospace;
 }
-textarea{
+
+textarea {
     border: none;
     border-bottom: 1px solid var(--white);
     background: none;
     color: #dce0e3;
     line-height: 150%;
     height: 100px;
-	resize: none;
+    resize: none;
     width: 100%;
     animation: move 1s ease-out;
     transition-duration: 1s;
 
 }
-form{
+
+form {
     height: 70vh;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.formMensaje{
+
+.formMensaje {
     color: var(--white);
     font-family: 'Chivo Mono', monospace;
 }
+
 .formulario {
     display: flex;
     justify-content: space-between;
@@ -315,7 +505,7 @@ form{
 
 }
 
-#formButton{
+#formButton {
     background: none;
     color: #dce0e3;
     cursor: pointer;
@@ -323,7 +513,7 @@ form{
     align-self: center;
     border: 1px solid whitesmoke;
     font-family: 'Chivo Mono', monospace;
-    padding: 20px 40px; 
+    padding: 20px 40px;
     margin-top: 150px;
     transition: all 0.3s;
     animation: move 1s ease-out;
@@ -333,60 +523,56 @@ form{
 #formButton:hover {
     background: #F2F3EB;
     color: #474544;
-  }
+}
 
 .diseñoContacto {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 40vw;
+    width: 35vw;
     background-color: black;
     border: 1px solid whitesmoke;
-
+    height: 80vh;
+    padding: 0;
 }
 
 @keyframes movimiento {
-  0% {
-    transform: translateY(50px);
-    opacity: 0;
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
-100% {
-    transform: translateY(0);
-    opacity: 1;  
-}
+/* FOOTER */
+.foot-ppal {
+    display: flex;
+    justify-content: center;
+    color: var(--white);
+    font-family: 'Chivo Mono', monospace;
+    height: 10vh;
 }
 
 /****** MEDIA QUERIES *******/
 
 @media screen and (max-width: 640px) {
-    .tituloHeader , .titulo , .tituloContacto{
+
+
+
+    .tituloHeader,
+    .titulo,
+    .tituloContacto {
         font-size: 1rem;
     }
 
-    .formulario, .formMensaje {
+    .formulario,
+    .formMensaje {
         width: 90%;
-    }
 
-    .diseñoContacto {
-        width: 70%;
-    }
-
-    #formButton{
-        padding: 10px 20px;
-    }
-    #menuHamburguesa{
-        display: none;
-    }
-}
-
-@media screen and (min-width: 641px) and (max-width: 960px){
-    .tituloHeader , .titulo , .tituloContacto{
-        font-size: 30px;
-    }
-
-    .formulario, .formMensaje {
-        width: 90%;
     }
 
     .diseñoContacto {
@@ -394,19 +580,133 @@ form{
     }
 
     #formButton {
-        padding: 15px 25px;
+        padding: 10px 20px;
     }
-    #menuHamburguesa{
-        display: none;
+
+    .nav {
+        position: fixed;
+        display: flex;
+        justify-content: space-between;
+        width: 95vw;
+        top: 0;
+        z-index: 1;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        align-items: center;
+        margin-right: 20px;
+        background-color: black;
+        position: fixed;
+        left: 0;
+        top: 60px;
+        width: 100%;
+        z-index: 1;
+        padding: 20px 0;
+        height: 60vh;
+        left: 100%;
+        transition: left 0.3s;
+        box-shadow: 0 0.5rem 1rem rgba(246, 243, 243, 0.15);
+    }
+
+    .nav-menu-item {
+        line-height: 60px;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav-menu_visible {
+        left: 0;
+    }
+
+    .sectionSkills {
+        margin-top: 5rem;
     }
 }
 
-@media screen and (min-width: 1280px) {
-    .tituloHeader , .titulo , .tituloContacto{
+@media screen and (min-width: 641px) and (max-width: 1023px) {
+
+    .tituloHeader,
+    .titulo,
+    .tituloContacto {
+        flex-wrap: wrap;
+        font-size: 30px;
+    }
+
+    .formulario,
+    .formMensaje {
+        width: 90%;
+        height: 3vh;
+    }
+
+    .diseñoContacto {
+        width: 70%;
+        height: 90vh;
+
+    }
+
+    #formButton {
+        padding: 15px 25px;
+    }
+
+    .nav {
+        top: 0;
+        z-index: 1;
+        position: fixed;
+        display: flex;
+        justify-content: space-between;
+        width: 95vw;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        align-items: center;
+        margin-right: 20px;
+        background-color: black;
+        position: fixed;
+        left: 0;
+        top: 60px;
+        width: 100%;
+        padding: 20px 0;
+        height: 40vh;
+        left: 100%;
+        transition: left 0.3s;
+        box-shadow: 0 0.5rem 1rem rgba(246, 243, 243, 0.15);
+
+
+    }
+
+
+    .nav-menu-item {
+        line-height: 60px;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav-menu_visible {
+
+        left: 0;
+    }
+
+    .sectionSkills {
+        margin-top: 15rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+
+    .tituloHeader,
+    .titulo,
+    .tituloContacto {
         font-size: 2rem;
     }
 
-    .formulario, .formMensaje {
+    .formulario,
+    .formMensaje {
         width: 150%;
     }
 
@@ -415,10 +715,17 @@ form{
     }
 
     #formButton {
-        padding: 20px 40px; 
+        padding: 20px 40px;
     }
 
-    #botonHamburguesa{
-        display: none;
+    .nav {
+        top: 0;
+        z-index: 1;
+        position: fixed;
+        display: flex;
+        justify-content: space-between;
+
     }
+
+
 }

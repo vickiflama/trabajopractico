@@ -19,27 +19,65 @@ if (valor==true) {
 
 // MENU HAMBURGUESA ///
 
-// let menu = document.getElementById("botonHamburguesa");
-// let navegador = document.getElementById("menuHamburguesa");
+const navToggle = document.querySelector(".nav-toggle")
+const navMenu = document.querySelector(".nav-menu")
 
-// menu.addEventListener("click", function() {
-//     menu.classList.toggle("close");
-//     navegador.classList.toggle("show");
-// })
-
-// navegador.addEventListener("click", function(){
-//     if (e.target.id === "menuHamburguesa") {
-//         navegador.classList.toggle.remove("show");
-//         menu.classList.toggle.remove("close");
-//     }
-// })
+navToggle.addEventListener("click", ()=> {
+    navMenu.classList.toggle("nav-menu_visible");
+})
 
 
-// document.getElementById("botonHamburguesa").addEventListener("click", function () {
-//     var menu = document.getElementById("menuHamburguesa");
-//     if (menu.style.display === "none") {
-//       menu.style.display = "block";
-//     } else {
-//       menu.style.display = "none";
-//     }
-//   });
+
+
+// ANIMACIONES SKILLS
+
+function mostrarScroll(){
+    let animado = document.querySelector(".animado1");
+    let scrollTop = document.documentElement.scrollTop;
+    let alturaAnimado = animado.offsetTop;
+    if (alturaAnimado - 400 < scrollTop) {
+        animado.style.opacity = 1;
+        animado.classList.add("mostrarArriba");
+    }
+}
+window.addEventListener("scroll", mostrarScroll);
+
+
+
+///ANIMADO2
+function mostrarScroll2(){
+    let animado = document.querySelector(".animado2");
+    let scrollTop = document.documentElement.scrollTop;
+    let alturaAnimado = animado.offsetTop;
+    if (alturaAnimado - 500 < scrollTop) {
+        animado.style.opacity = 1;
+        animado.classList.add("mostrarArriba");
+    }
+}
+window.addEventListener("scroll", mostrarScroll2);
+
+///ANIMADO3
+
+function mostrarScroll3(){
+    let animado = document.querySelector(".animado3");
+    let scrollTop = document.documentElement.scrollTop;
+    let alturaAnimado = animado.offsetTop;
+    if (alturaAnimado - 400 < scrollTop) {
+        animado.style.opacity = 1;
+        animado.classList.add("mostrarArriba");
+    }
+}
+window.addEventListener("scroll", mostrarScroll3);
+
+//ANIMADO4
+
+function mostrarScroll4(){
+    let animado = document.querySelector(".animado4");
+    let scrollTop = document.documentElement.scrollTop;
+    let alturaAnimado = animado.offsetTop;
+    if (alturaAnimado - 400 < scrollTop) {
+        animado.style.opacity = 1;
+        animado.classList.add("mostrarArriba");
+    }
+}
+window.addEventListener("scroll", mostrarScroll4);
