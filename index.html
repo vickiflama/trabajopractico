@@ -8,23 +8,24 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./css/cards.css">
-  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="css/cards.css">
+  <link rel="stylesheet" href="css/styles.css">
   <script src="https://kit.fontawesome.com/f6d3bfa140.js" crossorigin="anonymous"></script>
-  <script defer src="./js/script.js"></script>
-  <script defer src="./js/main.js"></script>
+  <script defer src="js/script.js"></script>
+  <script defer src="js/main.js"></script>
+  <script defer src="js/api.js" type="module"></script>
   <title>Portfolio</title>
 </head>
 
 <body class="dark">
   <!-- HOME -->
   <nav class="nav">
-    <button class="modo" id="modo"><img src="./media/img/brillo.png" alt="" class="brillo"></button>
+    <button class="modo" id="modo"><img src="media/img/brillo.png" alt="" class="brillo"></button>
     <!-- MENU -->
     <button class="nav-toggle">
       <i class="fa-solid fa-bars fa-lg"></i>
     </button>
-    <!-- <div class="menu"> -->
+    <div class="menu">
     <ul class="nav-menu">
       <li type="none" class="nav-menu-item">
         <a href="#home" class="link">HOME</a>
@@ -63,7 +64,7 @@
     <div class="card-grid">
       <div class="card-blur">
         <section id="nombre">
-          <label id="abrirModal1"><img src="./media/img/emojiAna.png" alt="Card" class="img-card">
+          <label id="abrirModal1"><img src="media/img/emojiAna.png" alt="Card" class="img-card">
             <p class="nombre">Analia</p>
           </label>
         </section>
@@ -91,7 +92,7 @@
       <!-- VICTORIA -->
       <div class="card-blur">
         <section id="nombre">
-          <label id="abrirModal2"><img src="./media/img/emojiVico.png" alt="Card" class="img-card">
+          <label id="abrirModal2"><img src="media/img/emojiVico.png" alt="Card" class="img-card">
             <p class="nombre">Victoria</p>
           </label>
         </section>
@@ -118,13 +119,13 @@
       <!-- MARÍA INÉS -->
       <div class="card-blur">
         <section id="nombre">
-          <label id="abrirModal3"><img src="./media/img/Emoji.png" alt="Card" class="img-card">
+          <label id="abrirModal3"><img src="media/img/Emoji.png" alt="Card" class="img-card">
             <p class="nombre">María Inés</p>
           </label>
         </section>
       </div>
       <!-- Ventana modal, por defecto no visiblel -->
-      <div id="ventanaModal3" class="modal">
+      <div id="ventanaModal3" class="modal" >
         <div class="modal-content3">
           <span class="cerrar3">x</span>
           <h2 class="ol-info">María Inés Bocanera</h2>
@@ -137,7 +138,7 @@
           <ol class="ol-info"><a class="fa fa-github fa-lg" target="_blank" href="https://github.com/inesboc"
               alt="Github"></a><a class="fa fa-linkedin fa-lg" target="_blank"
               href="https://www.linkedin.com/in/maria-ines-bocanera-712670178" alt="Linkedin"></a><a class="fa-lg"
-              href="/AnaliaRossottiCV.pdf" download="AnaliaRossottiCV.pdf"><i class="fa fa-file-pdf-o fa-lg"
+              href="media/cv/MIBCV.pdf" download="MIB"><i class="fa fa-file-pdf-o fa-lg"
                 alt="Descargar CV"> </i></a></ol>
         </div>
       </div>
@@ -145,7 +146,7 @@
       <!-- JONATHAN -->
       <div class="card-blur">
         <section id="nombre">
-          <label id="abrirModal4"><img src="./media/img/Emoji.png" alt="Card" class="img-card">
+          <label id="abrirModal4"><img src="media/img/Emoji.png" alt="Card" class="img-card">
             <p class="nombre">Jonathan</p>
           </label>
         </section>
@@ -165,7 +166,7 @@
           <ol class="ol-info"><a class="fa fa-github fa-lg" target="_blank" href="https://github.com/anyrossotti"
               alt="Github"></a><a class="fa fa-linkedin fa-lg" target="_blank"
               href="https://www.linkedin.com/in/analiabrossotti/" alt="Linkedin"></a><a class="fa-lg"
-              href="/AnaliaRossottiCV.pdf" download="AnaliaRossottiCV.pdf"><i class="fa fa-file-pdf-o fa-lg"
+              href="/media/cv/AnaliaRossottiCV.pdf" download="AnaliaRossottiCV.pdf"><i class="fa fa-file-pdf-o fa-lg"
                 alt="Descargar CV"> </i></a></ol>
         </div>
       </div>
@@ -176,9 +177,9 @@
 
   <!-- SKILLS -->
   <section class="sectionSkills" id="skills">
-    <!-- <div>
+     <div>
     <h3 class="titulo">SKILLS</h3>
-  </div> -->
+  </div>
     <br>
 
     <div class="v-lineAna"></div>
@@ -334,38 +335,43 @@
       <div>
         <p class="titulo">CONTACTO</p>
       </div>
-      <form action="show_data.html" method="post">
+      <form id="formContacto" action="show_data.html" method="post">
         <div class="formulario">
           <label for="nombre">
-            <input type="text" name="nombre" id="nombre" placeholder="Nombre" />
+            <input type="text" name="nombre" id="nombreform" placeholder="Nombre" />
           </label>
         </div>
         <div class="formulario">
           <label for="apellido">
-            <input type="text" name="apellido" id="apellido" placeholder="Apellido" />
+            <input type="text" name="apellido" id="apellidoform" required placeholder="Apellido" />
           </label>
         </div>
 
         <div class="formulario">
           <label for="telefono">
-            <input type="number" name="telefono" id="telefono" placeholder="Teléfono" />
+            <input type="number" name="telefono" id="telefonoform" placeholder="Teléfono" />
           </label>
         </div>
         <div class="formulario">
           <label for="mail">
-            <input type="email" name="mail" id="mail" placeholder="Mail">
+            <input type="email" name="mail" id="mailform" placeholder="Mail" required pattern="^[a-zA-Z0-9!#$%&amp;'*+\/=?^_`\{\|\}~.\-]+@[a-zA-Z0-9\-]+(\.[a-zA-Z0-9\-]+)*$">
           </label>
         </div>
         <div class="formulario">
           <label for="mensaje"></label>
-          <textarea name="mensaje" id="mensaje" placeholder="Mensaje" cols="40" rows="8" required></textarea>
+          <textarea name="mensaje" id="mensajeform" placeholder="Mensaje" cols="40" rows="8" required></textarea>
 
         </div>
         <br>
         <div class="formulario">
-          <input type="submit" value="ENVIAR" id="formButton">
+        
+
+        <input type="submit" value="ENVIAR" id="formButton">
+         
+         
         </div>
       </form>
+      
     </div>
   </section>
   <br>
