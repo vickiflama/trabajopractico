@@ -195,7 +195,7 @@ h2 {
 
 /* MEDIAS QUERIES */
 @media screen and (max-width: 640px) {
-
+ 
   .titulo {
     padding: 20px;
     font-size: 7vw;
