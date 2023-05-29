@@ -1,6 +1,6 @@
 # PORTFOLIO
-Es un portfolio para nuestra búsqueda laboral hecho con HTML CSS Y JS
-Formulario de contacto validado y con una API REST (sheet db io)
+Es un portfolio para nuestra búsqueda laboral hecho con HTML CSS Y JS.
+Formulario de contacto validado y con una API REST (sheet db io).
 Animaciones en section como "cards" y "skills".
 En section "cards": se encuentra nuestra información de contacto.
 Botón diurno/nocturno.
