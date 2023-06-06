@@ -16,3 +16,5 @@ Botón hamburguesa (menú) para dispositivos móviles.
 (En conjunto)
 Diseñado para 3 dispositivos: computadora, tablet y móviles.
 Temática, diseño, colorimetria.
+
+Jonathan Diaz no participó.
