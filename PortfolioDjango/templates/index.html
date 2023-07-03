@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+<html lang="en">
+
+<head>
+  <title>{% block title %} {% endblock %}</title>
+</head>
+  
+<body>
+  
+  <header>
+    <div class="logo"> <a href="{% url 'index' %}">PRINCIPAL</a></div>
+    <div class="links">
+        <ul>
+            <li><a href="{% url 'index' %}">Noticias</a></li>
+            <li><a href="{% url 'curso' %}">Curso</a></li>
+        </ul>
+    </div>
+</header>
+
+
+{% block content %}
+
+<!--Aca apareceria el contenido de cada plantilla-->
+
+<header class="header" id="home">
+  <div class="tituloHeader">
+    <h1>PORTFOLIO</h1>
+  </div>
+</header>
+
+
+{% endblock %}
+</body>
+</html>

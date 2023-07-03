@@ -1,0 +1,66 @@
+{% load static %}  <!-- para cargar los elementos estaticos,ya sea los css, imagenes, etc-->
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="{% static 'https://fonts.googleapis.com' %}">
+  <link rel="preconnect" href="{% static 'https://fonts.gstatic.com' %}">
+  <link rel="stylesheet" href="{% static 'https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap' %}">
+  <link rel="stylesheet" href="{% static './css/cards.css' %}">
+  <link rel="stylesheet" href="{% static './css/styles.css' %}">
+  <script src="https://kit.fontawesome.com/f6d3bfa140.js"></script>
+  <script defer src="{% static './js/script.js' %}"></script>
+  <script defer src="{% static './js/main.js' %}"></script>
+  <script defer src="{% static './js/api.js' %}" type="module"></script>
+  <title>{% block title %} {% endblock %}</title>
+</head>
+  
+<body class="dark">
+    <!-- NAVBAR COMUN A TODAS LAS VISTAS -->
+  <nav class="nav">
+    <button class="modo" id="modo"><img src="{% static './media/img/brillo.png' %}" alt="" class="brillo"></button>
+    <!-- MENU -->
+    <button class="nav-toggle">
+      <i class="fa-solid fa-bars fa-lg"></i>
+    </button>
+    <ul class="nav-menu">
+      <li type="none" class="nav-menu-item">
+        <a href="{% url 'index' %}" class="link">HOME</a>
+      </li>
+      <li type="none" class="nav-menu-item">
+        <a href="{% url 'nosotros' %}" class="link">NOSOTROS</a>
+      </li>
+      <li type="none" class="nav-menu-item">
+        <a href="{% url 'skills' %}" class="link">SKILLS</a>
+      </li>
+      <li type="none" class="nav-menu-item">
+        <a href="{% url 'contacto' %}" class="link">CONTACTO</a>
+      </li>
+    </ul>
+  </nav>
+
+<!--
+
+  <header>
+    <div class="logo"> <a href="{% url 'index' %}">INICIO</a></div>
+      <div class="links">
+          <ul>
+              <li><a href="{% url 'index' %}">Noticias</a></li>
+              <li><a href="{% url 'curso' %}">Curso</a></li>
+          </ul>
+      </div>
+    </div>
+  </header>
+  -->
+
+
+    {% block content %}
+
+    <!--Aca apareceria el contenido de cada plantilla-->
+    
+    {% endblock %}
+</body>
+</html>

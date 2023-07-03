@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=Chivo+Mono&family=Michroma&family=Rajdhani:wght@500&display=swap');
+
+main {
+  position: relative;
+}
+
+a {
+  text-decoration: none;
+  font-size: 1.3vw;
+  color: white;
+}
+
+h2 {
+  display: flex;
+  justify-content: center;
+  font-size: 2vw;
+  padding: 10px;
+  padding-top: 25px;
+}
+
+.whatsapp {
+  color: black;
+}
+
+.fa {
+  color: black;
+  font-size: 2vw;
+  padding: 15px;
+}
+
+.fa-file-pdf-o:hover,
+.fa-github:hover,
+.fa-linkedin:hover,
+.text-box:hover,
+.whatsapp:hover {
+  opacity: 0.4;
+}
+
+/* Modal, donde se muestra la info de cada card */
+.modal {
+  display: none;
+  /* Por defecto, está oculto */
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 60px;
+  bottom: 0;
+  padding: 20px;
+  z-index: 1;
+  margin: auto;
+  width: 800px;
+  /* max-width: 550px; */
+  height: 400px;
+  background-color: whitesmoke;
+  border-radius: 5px;
+}
+
+.ol-info {
+  display: flex;
+  justify-content: center;
+  color: black;
+
+}
+
+.ol-modal {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  color: white;
+  font-family: 'Chivo Mono', monospace;
+}
+
+/* Ventana o caja modal */
+.modal-content1,
+.modal-content2,
+.modal-content3,
+.modal-content4 {
+  position: relative;
+  background-color: white;
+  margin: auto;
+  -webkit-animation-name: animarsuperior;
+  -webkit-animation-duration: 0.5s;
+  animation-name: animarsuperior;
+  animation-duration: 0.5s;
+  font-family: 'Chivo Mono', monospace;
+  height: 390px;
+}
+
+/* Animaciones de cómo se despliega el contenido */
+@keyframes animatetop {
+  from {
+    top: -400px;
+    opacity: 0
+  }
+
+  to {
+    top: 0;
+    opacity: 0.5
+  }
+}
+
+@keyframes animarsuperior {
+  from {
+    top: -400px;
+    opacity: 0
+  }
+
+  to {
+    top: 0;
+    opacity: 0.5
+  }
+}
+
+/* Botón cerrar */
+.cerrar1,
+.cerrar2,
+.cerrar3,
+.cerrar4 {
+  padding: 5px 10px;
+  margin-bottom: 20px;
+  background-color: black;
+  color: antiquewhite;
+  border-radius: 5px;
+}
+
+.cerrar1:hover,
+.cerrar2:hover,
+.cerrar1:focus,
+.cerrar2:focus,
+.cerrar3:hover,
+.cerrar4:hover,
+.cerrar3:hover,
+.cerrar4:hover {
+  background-color: gray;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* CARDS */
+.nosotros {
+  margin-top: 100px;
+  height: 85vh;
+}
+
+.card-grid {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  height: 400px;
+}
+
+.card-blur {
+  box-shadow: 4px 4px 10px whitesmoke;
+  display: inline-block;
+  border-radius: 30px;
+  margin: 10px;
+  width: 20%;
+  height: 95%;
+}
+
+.card-blur:hover {
+  transform: scale(1.1);
+  transition: 1s;
+}
+
+/* Cuando selecciono una foto, con el cursor, las demas sedifuminan y se ponen grises */
+.card-grid:hover .card-blur:not(:hover) {
+  filter: brightness(0.5) saturate(0.5) contrast(1.2) blur(10px);
+  transition: filter 200ms linear, transform 200ms linear;
+}
+
+.img-card {
+  width: 100%;
+  height: 320px;
+  border-radius: 20px 20px 0 0;
+  cursor: pointer;
+}
+
+.nombre {
+  color: white;
+  font-size: 25px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
+
+
+.footer {
+  margin: auto;
+  margin-top: 25px;
+  color: white;
+  width: 100%;
+  height: 4vw;
+  bottom: 0;
+  position: relative;
+}
+
+
+/* MEDIAS QUERIES */
+@media screen and (max-width: 640px) {
+ 
+  .titulo {
+    padding: 20px;
+    font-size: 7vw;
+  }
+
+  .nombre {
+    font-size: 4vw;
+  }
+
+  .card-grid {
+    height: 100%;
+  }
+
+  .card-blur {
+    margin: auto;
+    margin: 0px 5px 10px 5px;
+    width: 40%;
+    height: 50%;
+    margin-top: 20px;
+  }
+
+  .img-card {
+    height: 90%;
+  }
+
+  .footer {
+    display: none;
+  }
+
+
+}
+
+@media screen and (min-width: 641px) and (max-width: 960px) {
+
+  .titulo {
+    padding: 20px;
+    font-size: 6vw;
+  }
+
+  .card-grid {
+    height: fit-content;
+  }
+
+  .card-blur {
+    width: 35%;
+    height: 300px;
+  }
+
+  .img-card {
+    height: 250px;
+  }
+
+  .nombre {
+    font-size: 3vw;
+    padding: 5px;
+  }
+
+  .footer {
+    display: none;
+  }
+
+}
+
+@media screen and (min-width: 1280px) {
+
+  .titulo {
+    font-size: 6vw;
+    margin-top: 30px;
+  }
+
+  .card-blur {
+    width: 22%;
+    height: 380px;
+    margin: 10px;
+  }
+
+  .img-card {
+    height: 330px;
+    border-radius: 20px 20px 0 0;
+  }
+
+  .nombre {
+    padding: 10px;
+  }
+
+}
