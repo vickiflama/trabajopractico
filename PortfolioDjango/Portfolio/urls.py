@@ -17,16 +17,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 #Traer, importar cada def
-from Portfolio.views import inicio, saludo_html, despedida, get_fecha, curso, nosotros, skills, contacto
+from Portfolio.views import inicio, nosotros, skills, contacto
 
 urlpatterns = [
     path('admin/', admin.site.urls), #Nombre de la funcion del archivo views
     path('', inicio, name = 'index'),   #Colocada como vista principal, HOME. En name indico el html al que va linkeado
     path('nosotros', nosotros, name = 'nosotros'),
     path('skills', skills, name = 'skills'),
-    path('contacto', contacto, name = 'contacto'),
-    path('saludohtml/', saludo_html),    
-    path('despedida/', despedida),
-    path('fecha/', get_fecha),
-    path('curso/', curso, name = 'curso'),
+    path('contacto', contacto, name = 'contacto')
 ]
