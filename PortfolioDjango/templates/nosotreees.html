@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load static %}  <!-- para cargar los elementos estaticos,ya sea los css, imagenes, etc-->
+<html lang="en">
+
+<head>
+  <title>{% block title %}Nosotros{% endblock %}</title>
+</head> 
+<body>
+
+{% block content %}
+
+    <!--Aca apareceria el contenido de cada plantilla-->
+<!-- NOSOTROS -->
+
+<div class="nosotros" id="nosotros">
+  <div>
+    <h3 class="titulo">NOSOTROS </h3>
+  </div>
+  <br>
+
+  <table class="tableNos">
+    <thead>
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Telefono</th>
+        <th scope="col">E-mail</th>
+        <th scope="col">Domicilio</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for p in perfiles %}
+      <tr>
+        <td>{{p.nombre}}</td>
+        <td>{{p.telefono}}</td>
+        <td>{{p.email}}</td>
+        <td>{{p.domicilio}}</td>
+        <td class="tdN">Editar</td>
+        <td class="tdN">Eliminar</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+    
+
+
+{% endblock %}

@@ -2,21 +2,11 @@
 <html lang="en">
 
 <head>
-  <title>{% block title %} {% endblock %}</title>
+  <title>{% block title %}Portfolio{% endblock %}</title>
 </head>
   
 <body>
   
-  <header>
-    <div class="logo"> <a href="{% url 'index' %}">PRINCIPAL</a></div>
-    <div class="links">
-        <ul>
-            <li><a href="{% url 'index' %}">Noticias</a></li>
-            <li><a href="{% url 'curso' %}">Curso</a></li>
-        </ul>
-    </div>
-</header>
-
 
 {% block content %}
 
@@ -32,3 +22,14 @@
 {% endblock %}
 </body>
 </html>
+
+
+
+<ul class="ol-analia">
+  {% for p in perfiles %}
+  <ol class="ol-modal">{{p.nombre}}</ol>
+  <ol class="ol-modal">{{p.telefono}}</ol>
+  <ol class="ol-modal">{{p.email}}</ol>
+  <ol class="ol-modal">{{p.domicilio}}</ol>
+  {% endfor %}
+</ul>

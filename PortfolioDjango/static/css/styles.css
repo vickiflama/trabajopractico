@@ -247,7 +247,6 @@ header {
 }
 
 /******* NOSOTROS *******/
-
 .mainNosotros {
     padding-top: 5rem;
     height: 90vh;
@@ -264,6 +263,20 @@ header {
     font-size: 34px;
     animation: move 1s ease-out;
     transition-duration: 1s;
+}
+
+td, th {
+    color: white;
+    width: 150px;
+}
+
+.tdN {
+    width: 100px;
+    color: white;
+}
+
+.tableNos, td, th {
+    border:2px white solid;
 }
 
 /******* SKILLS *******/

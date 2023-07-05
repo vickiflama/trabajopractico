@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'Perfiles'
 ]
 
 MIDDLEWARE = [
@@ -77,7 +78,11 @@ WSGI_APPLICATION = 'Portfolio.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': 'PerfilDB',
+        'USER': 'postgres',
+        'PASSWORD': 'widder',
+        'HOST': '127.0.0.1',
+        'PORT': '5432'
     }
 }
 
