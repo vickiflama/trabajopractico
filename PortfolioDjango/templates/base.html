@@ -23,24 +23,25 @@
   <nav class="nav">
     <button class="modo" id="modo"><img src="{% static './media/img/brillo.png' %}" alt="" class="brillo"></button>
     <!-- MENU -->
+    
     <button class="nav-toggle">
       <i class="fa-solid fa-bars fa-lg"></i>
     </button>
     <ul class="nav-menu">
       <li type="none" class="nav-menu-item">
-        <a href="{% url 'index' %}" class="link">HOME</a>
+        <a href="{{'/'}}" class="link">HOME</a>
       </li>
       <li type="none" class="nav-menu-item">
-        <a href="{% url 'nosotros' %}" class="link">NOSOTROS</a>
+        <a href="{{'nosotros'}}" class="link">NOSOTROS</a>
       </li>
       <li type="none" class="nav-menu-item">
-        <a href="{% url 'nosotreees' %}" class="link">NOSOTRES</a>
+        <a href="{{'nosotreees'}}" class="link">NOSOTRES</a>
       </li>
       <li type="none" class="nav-menu-item">
-        <a href="{% url 'skills' %}" class="link">SKILLS</a>
+        <a href="{{'skills'}}" class="link">SKILLS</a>
       </li>
       <li type="none" class="nav-menu-item">
-        <a href="{% url 'contacto' %}" class="link">CONTACTO</a>
+        <a href="{{'contacto'}}" class="link">CONTACTO</a>
       </li>
     </ul>
   </nav>
